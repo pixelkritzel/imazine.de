@@ -12,13 +12,19 @@
 	{{ .Hugo.Generator }}
 </head>
 <body>
-	<header>
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-		<nav>
-			<ul>
-				{{ range .Site.Menus.main }}
-				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-				{{ end }}
-			</ul>
-		</nav>
-	</header>
+	<div>
+		<div class="row">
+			<header class="column column-20 header">
+				<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="logo-image">
+					<img src="/images/timo.jpg" alt="imazine" />
+				</a>
+				<nav>
+					<ul>
+						{{ range .Site.Menus.main }}
+						<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+						{{ end }}
+					</ul>
+				</nav>
+			</header>
+			<div class="column column-3-80">
+				<div class="main">

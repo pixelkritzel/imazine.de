@@ -1,0 +1,33 @@
+@import 'font-face';
+@import 'normalize';
+@import 'milligram/milligram';
+@import 'variables';
+@import 'media-queries';
+
+@import 'header';
+@import 'main';
+@import 'article';
+
+:root {
+  font-size: 0.8vh;
+
+  @media (max-height: 1200px) {
+    font-size: 10px;
+  }
+
+  @media (min-height: 1828px) {
+    font-size: 20px;
+  }
+}
+
+.logo-image {
+  display: block;
+  margin: 88px auto 30px;
+  max-width: 180px;
+  border-radius: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+  }
+}
