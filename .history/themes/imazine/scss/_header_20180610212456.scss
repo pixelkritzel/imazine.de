@@ -10,7 +10,6 @@
   @include respond-to($desktop) {
     flex-direction: column;
     flex-wrap: nowrap;
-    min-height: 100vh;
     padding: 0 20px;
     margin-left: 1rem;
   }
@@ -57,7 +56,7 @@
   }
 
   @include respond-to($desktop) {
-    flex-basis: auto;
+    flex-basis: content;
     border-top: none;
     margin-top: 60px;
   }
