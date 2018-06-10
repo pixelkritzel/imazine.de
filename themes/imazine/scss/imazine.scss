@@ -1,12 +1,13 @@
 @import 'font-face';
 @import 'normalize';
-@import 'milligram/milligram';
 @import 'variables';
-@import 'media-queries';
+@import 'milligram/milligram';
+@import 'mixins';
 
 @import 'header';
 @import 'main';
 @import 'article';
+@import 'pagination';
 
 :root {
   font-size: 0.8vh;
@@ -20,14 +21,13 @@
   }
 }
 
-.logo-image {
-  display: block;
-  margin: 88px auto 30px;
-  max-width: 180px;
-  border-radius: 100%;
-  overflow: hidden;
-
-  img {
-    display: block;
+main {
+  @include respond-to($desktop) {
+    margin: 0 auto;
+    width: 80%;
   }
+}
+
+.pagination {
+  padding: 40px;
 }

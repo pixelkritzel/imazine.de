@@ -12,13 +12,17 @@
 	{{ .Hugo.Generator }}
 </head>
 <body>
-	<div>
+	<div class="container">
 		<div class="row">
 			<header class="column column-20 header">
 				<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="logo-image">
 					<img src="/images/timo.jpg" alt="imazine" />
 				</a>
-				<nav>
+				<label role="button" data-toggle-menu class="button menu-toggle" for="menu-toggle">
+					Menü
+				</label>
+				<input type="checkbox" class="menu-toggle-checkbox" id="menu-toggle" />
+				<nav class="menu menu--hide-on-mobile">
 					<ul>
 						{{ range .Site.Menus.main }}
 						<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
@@ -26,5 +30,5 @@
 					</ul>
 				</nav>
 			</header>
-			<div class="column column-3-80">
+			<div class="column">
 				<div class="main">
