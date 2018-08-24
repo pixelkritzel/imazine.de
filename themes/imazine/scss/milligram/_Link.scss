@@ -1,8 +1,12 @@
-
-// Divider
+// Link
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-hr
-	border: 0
-	border-top: .1rem solid $color-tertiary
-	margin: 3.0rem 0
+a {
+  color: $color-primary;
+  transition: color 0.6s ease-in-out;
+
+  &:focus,
+  &:hover {
+    color: $color-secondary;
+  }
+}
