@@ -4,14 +4,18 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px 10%;
+  background-color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
 
   @include respond-to($desktop) {
+    position: fixed;
+    height: 100vh;
+    width: $header-width;
     flex-direction: column;
     flex-wrap: nowrap;
     min-height: 100vh;
-    padding: 0 20px;
+    padding: 0 20px 40px;
     margin-left: 1rem;
   }
 }

@@ -21,6 +21,14 @@
   }
 }
 
+body {
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  background-color: #f1f1f1;
+}
+
 main {
   @include respond-to($desktop) {
     margin: 0 auto;

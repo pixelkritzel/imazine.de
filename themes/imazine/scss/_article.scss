@@ -20,6 +20,12 @@
   }
 }
 
+.article-content {
+  text-align: justify;
+}
+
 .article-publish-date {
+  display: block;
+  text-align: right;
   color: desaturate(lighten($color-secondary, 40%), 80%);
 }

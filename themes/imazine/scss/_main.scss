@@ -1,10 +1,10 @@
 .main {
   min-height: 100vh;
-  background-color: #f1f1f1;
   padding: 3% 0;
-  border-left: 1px solid $border-color;
 
   @include respond-to($desktop) {
-    padding: 8.333333% 0;
+    margin-left: $header-width;
+    border-left: 1px solid $border-color;
+    padding: 80px 0 40px;
   }
 }
