@@ -1,4 +1,4 @@
-<article class="article">
+<article class="article {{if .Params.prose }}prose{{ end }}">
   <h1>{{ .Title }}</h1>
   <div class="article-content">
     {{ .Content }}

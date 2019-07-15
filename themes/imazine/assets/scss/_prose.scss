@@ -1,0 +1,14 @@
+.prose {
+  p {
+    margin-bottom: 0;
+  }
+
+  p + p {
+    text-indent: #{$line-height}em;
+  }
+
+  hr {
+    border: none;
+    margin-top: #{$line-height}em;
+  }
+}
