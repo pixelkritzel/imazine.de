@@ -9,4 +9,4 @@ LanguageCode="de-1996"
   [[menu.main]]
     identifier = "imprint-privacy"
     name = "Impressum und Datenschutzerklärung"
-    url = "/imprint-privacy"
+    url = "/datenschutz_impressum"

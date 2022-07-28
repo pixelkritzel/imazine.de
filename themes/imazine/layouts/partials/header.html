@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.LanguageCode | default "de" }}">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ .Title }}</title>
-	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-	{{ $style := resources.Get "scss/imazine.scss" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
-	{{ .Hugo.Generator }}
-	{{ template "_internal/opengraph.html" . }}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{{ .Title }}</title>
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}" />
+  {{ end }} {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}" />
+  {{ end }} {{ $style := resources.Get "scss/imazine.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ range .AlternativeOutputFormats -}} {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s" />
+  ` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }} {{ end -}} {{ template "_internal/opengraph.html" . }}
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<header class="column header">
-				<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="logo-image">
-					<img src="/images/timo.jpg" alt="imazine" />
-				</a>
-				<label role="button" data-toggle-menu class="button menu-toggle" for="menu-toggle">
-					Menü
-				</label>
-				<input type="checkbox" class="menu-toggle-checkbox" id="menu-toggle" />
-				<nav class="menu menu--hide-on-mobile">
-					<ul>
-						{{ range .Site.Menus.main }}
-						<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-						{{ end }}
-					</ul>
-				</nav>
-			</header>
-			<div class="column">
-				<div class="main">
+  <div class="container">
+    <div class="row">
+      <header class="column header">
+        <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="logo-image">
+          <img src="/images/timo.jpg" alt="imazine" />
+        </a>
+        <label role="button" data-toggle-menu class="button menu-toggle" for="menu-toggle"> Menü </label>
+        <input type="checkbox" class="menu-toggle-checkbox" id="menu-toggle" />
+        <nav class="menu menu--hide-on-mobile">
+          <ul>
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+      </header>
+      <div class="column">
+        <div class="main">
